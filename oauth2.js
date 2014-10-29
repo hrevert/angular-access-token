@@ -54,4 +54,16 @@
 
         return tokenService;
     }]);
+
+    oauth2Module.factory('HtOauth2.TokenInterceptor', function ($q, $window, accessTokenService) {
+        return {
+            request: function (config) {
+                config.headers = config.headers || {};
+                if (accessTokenService.hasToken()) {
+                    config.headers.Authorization = 'Bearer ' + accessTokenService.getToken();
+                }
+                return config;
+            }
+        };
+    });
 })();
