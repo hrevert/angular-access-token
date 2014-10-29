@@ -1,0 +1,26 @@
+{
+  "name": "angular-access-token",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hrevert/angular-access-token",
+  "authors": [
+    "Ujjwal Ojha <bring2uo@gmail.com>"
+  ],
+  "description": "Access Token module for AngularJs",
+  "main": "accessToken.js",
+  "keywords": [
+    "access-token",
+    "oauth2"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  }
+}
