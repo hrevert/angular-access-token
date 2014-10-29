@@ -9,11 +9,8 @@
             _timeoutID: null
         };
 
-        tokenService.setToken = function (accessToken, accessTokenExpiry) {
-            if (accessTokenExpiry <= Date.now()) {
-                // @todo determine what is the best thing to do here
-                return;
-            }
+        tokenService.setToken = function (accessToken, expiresIn) {
+            var accessTokenExpiry = Date.now() + expiresIn * 1000;
             $window.localStorage.setItem('accessToken', accessToken);
             $window.localStorage.setItem('accessTokenExpiry', accessTokenExpiry);
             this._hasToken = true;
