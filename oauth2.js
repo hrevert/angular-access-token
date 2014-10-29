@@ -2,7 +2,7 @@
 (function () {
     var oauth2Module = angular.module('HtOauth2', []);
 
-    oauth2Module.factory('accessTokenService', ['$window', function ($window) {
+    oauth2Module.factory('HtOauth2.accessTokenService', ['$window', function ($window) {
 
         var tokenService = {
             _hasToken: null,
