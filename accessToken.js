@@ -1,8 +1,8 @@
 'use strict';
 (function () {
-    var oauth2Module = angular.module('HtOauth2', []);
+    var accessTokenModule = angular.module('htAccessToken', []);
 
-    oauth2Module.factory('HtOauth2.accessTokenService', ['$window', function ($window) {
+    accessTokenModule.factory('htAccessToken.manager', ['$window', function ($window) {
 
         var tokenService = {
             _hasToken: null,
@@ -55,7 +55,7 @@
         return tokenService;
     }]);
 
-    oauth2Module.factory('HtOauth2.TokenInterceptor', function ($q, $window, accessTokenService) {
+    accessTokenModule.factory('htAccessToken.interceptor', function ($q, $window, accessTokenService) {
         return {
             request: function (config) {
                 config.headers = config.headers || {};

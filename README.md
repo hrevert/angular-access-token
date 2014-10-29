@@ -1,4 +1,4 @@
-angular-oauth2
+htAccessToken
 ==============
 
-Oauth2 authentication module for AngularJs
+Access Token module for [AngularJs](http://angularjs.org/).
