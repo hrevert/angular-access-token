@@ -52,7 +52,7 @@
         return tokenService;
     }]);
 
-    accessTokenModule.factory('htAccessToken.interceptor', function ($q, $window, accessTokenService) {
+    accessTokenModule.factory('htAccessToken.interceptor', ['$q', '$window', 'htAccessToken.manager', function($q, $window, accessTokenService) {
         return {
             request: function (config) {
                 config.headers = config.headers || {};
