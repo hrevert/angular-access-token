@@ -16,7 +16,7 @@ npm install angular-access-token --save
 ```js
 var app = angular.module('MyApp', ['htAccessToken']);
 
-app.controller('LoginCtrl', ['htAccessToken.manager', function(accessTokenManager) {
+app.controller('LoginCtrl', ['htAccessTokenManager', function(accessTokenManager) {
     // store access token in local storage with expiry of 3600 seconds
     accessTokenManager.setToken('sadfsadf', 3600);
     console.log(accessTokenManager.hasToken()); // true

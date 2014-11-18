@@ -52,12 +52,19 @@
         return tokenService;
     }]);
 
-    accessTokenModule.factory('htAccessToken.interceptor', function ($q, $window, accessTokenService) {
+    /**
+     * Alias for htAccessToken.manager
+     */
+    accessTokenModule.factory('htAccessTokenManager', ['htAccessToken.manager', function(htAccessTokenManager){
+        return htAccessTokenManager;
+    }]);
+
+    accessTokenModule.factory('htAccessToken.interceptor', function ($q, $window, htAccessTokenManager) {
         return {
             request: function (config) {
                 config.headers = config.headers || {};
-                if (accessTokenService.hasToken()) {
-                    config.headers.Authorization = 'Bearer ' + accessTokenService.getToken();
+                if (htAccessTokenManager.hasToken()) {
+                    config.headers.Authorization = 'Bearer ' + htAccessTokenManager.getToken();
                 }
                 return config;
             }
