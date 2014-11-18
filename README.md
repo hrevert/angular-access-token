@@ -23,7 +23,7 @@ app.controller('LoginCtrl', ['htAccessTokenManager', function(accessTokenManager
     console.log(accessTokenManager.getToken()); // sadfsadf
 }]);
 
-// for using token interceptor to automotically send token as Authorization header
+// for using token interceptor to automatically send token as Authorization header
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('htAccessToken.interceptor');
 });
